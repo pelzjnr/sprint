@@ -4,26 +4,47 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       {/* hero */}
-      <section className="h-screen flex flex-col justify-center px-8 md:px-24 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#ff4d00] rounded-full blur-3xl -translate-y-1/2 translate-x-1/4 pointer-events-none opacity-10" />
-        <nav className="absolute top-8 right-24 flex gap-8">
-          <Link href="/docs" className="font-mono text-sm text-gray-600 hover:text-orange">docs</Link>
-          <Link href="/pricing" className="font-mono text-sm text-gray-600 hover:text-orange">pricing</Link>
-          <Link href="/dashboard" className="font-mono text-sm text-orange font-bold">dashboard</Link>
-        </nav>
-        <h1 className="font-display text-6xl md:text-9xl font-bold tracking-tight relative mt-12">
+      <section className="min-h-screen flex flex-col relative overflow-hidden">
+        {/* header */}
+        <header className="border-b border-gray-100 px-8 md:px-24 py-6 flex items-center justify-between">
+          <Link href="/" className="font-display text-2xl font-bold">
+            sprint<span className="text-orange">.</span>
+          </Link>
+          <nav className="flex items-center gap-8">
+            <Link href="/docs" className="font-mono text-sm text-gray-600 hover:text-orange">docs</Link>
+            <Link href="/pricing" className="font-mono text-sm text-gray-600 hover:text-orange">pricing</Link>
+            <Link href="/dashboard" className="font-mono text-sm text-gray-600 hover:text-orange">dashboard</Link>
+            <div className="flex items-center gap-4">
+              <Link href="/login" className="font-mono text-sm text-gray-600 hover:text-orange">log in</Link>
+              <Link href="/signup" className="bg-orange text-white font-mono text-sm px-6 py-3 hover:bg-[#cc3d00] transition-colors">
+                sign up
+              </Link>
+            </div>
+          </nav>
+        </header>
+
+        <div className="flex-1 flex flex-col justify-center px-8 md:px-24 pb-24">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#ff4d00] rounded-full blur-3xl translate-y-1/4 -translate-x-1/4 pointer-events-none opacity-10" />
+        <h1 className="font-display text-6xl md:text-9xl font-bold tracking-tight relative z-10">
           sprint<span className="text-orange">.</span>
         </h1>
-        <p className="font-mono text-lg md:text-xl mt-6 max-w-xl text-gray-600 relative">
+        <p className="font-mono text-lg md:text-xl mt-6 max-w-xl text-gray-600 relative z-10">
           browser automation api. build, scale, sell.
         </p>
-        <div className="mt-12 relative">
+        <div className="mt-12 flex gap-4 relative z-10">
           <Link
-            href="#pricing"
-            className="inline-block bg-[#ff4d00] text-white font-mono text-lg px-8 py-4 hover:bg-[#cc3d00] transition-colors"
+            href="/signup"
+            className="inline-block bg-orange text-white font-mono text-lg px-8 py-4 hover:bg-[#cc3d00] transition-colors"
           >
             start building →
           </Link>
+          <Link
+            href="/login"
+            className="inline-block border border-gray-300 text-gray-700 font-mono text-lg px-8 py-4 hover:border-orange hover:text-orange transition-colors"
+          >
+            sign in
+          </Link>
+        </div>
         </div>
       </section>
 
