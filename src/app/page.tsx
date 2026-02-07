@@ -10,17 +10,17 @@ export default function Home() {
             sprint<span className="text-orange">.</span>
           </Link>
           <nav className="hidden md:flex items-center gap-8">
-            <Link href="/docs.html" className="font-mono text-sm text-gray-600 hover:text-orange">docs</Link>
-            <Link href="/pricing.html" className="font-mono text-sm text-gray-600 hover:text-orange">pricing</Link>
-            <Link href="/dashboard.html" className="font-mono text-sm text-gray-600 hover:text-orange">dashboard</Link>
-            <Link href="/profile.html" className="font-mono text-sm text-gray-600 hover:text-orange">profile</Link>
-            <Link href="/login.html" className="font-mono text-sm text-gray-600 hover:text-orange">log in</Link>
-            <Link href="/signup.html" className="bg-orange text-white font-mono text-sm px-5 py-2 hover:bg-[#cc3d00] transition-colors">
+            <Link href="/docs" className="font-mono text-sm text-gray-600 hover:text-orange">docs</Link>
+            <Link href="/pricing" className="font-mono text-sm text-gray-600 hover:text-orange">pricing</Link>
+            <Link href="/dashboard" className="font-mono text-sm text-gray-600 hover:text-orange">dashboard</Link>
+            <Link href="/profile" className="font-mono text-sm text-gray-600 hover:text-orange">profile</Link>
+            <Link href="/login" className="font-mono text-sm text-gray-600 hover:text-orange">log in</Link>
+            <Link href="/signup" className="bg-orange text-white font-mono text-sm px-5 py-2 hover:bg-[#cc3d00] transition-colors">
               sign up
             </Link>
           </nav>
           {/* mobile menu button */}
-          <Link href="/signup.html" className="md:hidden bg-orange text-white font-mono text-sm px-4 py-2 hover:bg-[#cc3d00] transition-colors">
+          <Link href="/signup" className="md:hidden bg-orange text-white font-mono text-sm px-4 py-2 hover:bg-[#cc3d00] transition-colors">
             sign up
           </Link>
         </div>
@@ -37,13 +37,13 @@ export default function Home() {
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
             <Link
-              href="/signup.html"
+              href="/signup"
               className="inline-block bg-orange text-white font-mono text-base md:text-lg px-8 py-4 hover:bg-[#cc3d00] transition-colors text-center"
             >
               start building →
             </Link>
             <Link
-              href="/login.html"
+              href="/login"
               className="inline-block border border-gray-300 text-gray-700 font-mono text-base md:text-lg px-8 py-4 hover:border-orange hover:text-orange transition-colors text-center"
             >
               sign in
@@ -188,7 +188,7 @@ export default function Home() {
           </p>
           <div className="mt-8">
             <Link
-              href="/signup.html"
+              href="/signup"
               className="inline-block bg-white text-orange font-mono text-base md:text-lg px-8 py-4 hover:bg-black hover:text-white transition-colors"
             >
               get api key →
@@ -209,3 +209,4 @@ export default function Home() {
     </main>
   );
 }
+<!-- vercel trigger -->

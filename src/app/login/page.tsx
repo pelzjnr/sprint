@@ -52,7 +52,7 @@ export default function Login() {
               <input type="checkbox" className="accent-orange" />
               <span className="font-mono text-xs text-gray-500">remember me</span>
             </label>
-            <Link href="/forgot-password.html" className="font-mono text-xs text-orange hover:text-[#cc3d00]">
+            <Link href="/forgot-password" className="font-mono text-xs text-orange hover:text-[#cc3d00]">
               forgot password?
             </Link>
           </div>
@@ -67,7 +67,7 @@ export default function Login() {
 
         <p className="font-mono text-sm text-gray-500 mt-8 text-center">
           don't have an account?{" "}
-          <Link href="/signup.html" className="text-orange hover:text-[#cc3d00]">
+          <Link href="/signup" className="text-orange hover:text-[#cc3d00]">
             sign up
           </Link>
         </p>

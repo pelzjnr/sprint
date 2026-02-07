@@ -11,14 +11,22 @@ npm run dev
 
 ## Stack
 
-- Next- Tailwind CSS
-- Fr.js 14
-amer Motion
+- Next.js 14
+- Tailwind CSS
+- Framer Motion
 
 ## Deploy
 
-Vercel:
+**Vercel (auto-deploy):**
+
+Push to `master` branch → Vercel auto-deploys.
 
 ```bash
-npx vercel
+# Manual deploy
+npx vercel --prod
 ```
+
+## URLs
+
+- Production: https://sprint.vercel.app
+- Repo: https://github.com/pelzjnr/sprint

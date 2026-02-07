@@ -6,15 +6,18 @@ export default function Dashboard() {
   const [apiKey, setApiKey] = useState("sprint_api_key_xxxx");
   const [showKey, setShowKey] = useState(false);
 
+  const [copied, setCopied] = useState(false);
+
   const copyKey = () => {
     navigator.clipboard.writeText(apiKey);
-    alert("copied to clipboard");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
   };
 
   const regenerateKey = () => {
     const newKey = "sprint_api_key_" + Math.random().toString(36).substring(2, 22);
     setApiKey(newKey);
-    alert("new api key generated");
+    setCopied(false);
   };
 
   return (
@@ -26,9 +29,9 @@ export default function Dashboard() {
             sprint<span className="text-orange">.</span>
           </Link>
           <nav className="flex items-center gap-6">
-            <Link href="/docs.html" className="font-mono text-sm text-gray-600 hover:text-orange hidden sm:block">docs</Link>
-            <Link href="/pricing.html" className="font-mono text-sm text-gray-600 hover:text-orange hidden sm:block">pricing</Link>
-            <Link href="/profile.html" className="font-mono text-sm text-orange font-bold hidden sm:block">profile</Link>
+            <Link href="/docs" className="font-mono text-sm text-gray-600 hover:text-orange hidden sm:block">docs</Link>
+            <Link href="/pricing" className="font-mono text-sm text-gray-600 hover:text-orange hidden sm:block">pricing</Link>
+            <Link href="/profile" className="font-mono text-sm text-orange font-bold hidden sm:block">profile</Link>
             <div className="w-8 h-8 bg-orange rounded-full flex items-center justify-center text-white font-mono text-sm font-bold">
               P
             </div>
@@ -65,7 +68,7 @@ export default function Dashboard() {
                 onClick={copyKey}
                 className="bg-gray-100 text-gray-700 font-mono text-xs px-4 py-2 hover:bg-gray-200 transition-colors"
               >
-                copy
+                {copied ? "copied!" : "copy"}
               </button>
               <button
                 onClick={regenerateKey}

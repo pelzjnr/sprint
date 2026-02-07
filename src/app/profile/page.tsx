@@ -20,9 +20,9 @@ export default function Profile() {
             sprint<span className="text-orange">.</span>
           </Link>
           <nav className="flex items-center gap-6">
-            <Link href="/docs.html" className="font-mono text-sm text-gray-600 hover:text-orange hidden sm:block">docs</Link>
-            <Link href="/pricing.html" className="font-mono text-sm text-gray-600 hover:text-orange hidden sm:block">pricing</Link>
-            <Link href="/dashboard.html" className="font-mono text-sm text-orange font-bold hidden sm:block">dashboard</Link>
+            <Link href="/docs" className="font-mono text-sm text-gray-600 hover:text-orange hidden sm:block">docs</Link>
+            <Link href="/pricing" className="font-mono text-sm text-gray-600 hover:text-orange hidden sm:block">pricing</Link>
+            <Link href="/dashboard" className="font-mono text-sm text-orange font-bold hidden sm:block">dashboard</Link>
             <div className="w-8 h-8 bg-orange rounded-full flex items-center justify-center text-white font-mono text-sm font-bold">
               {user.firstName[0]}{user.lastName[0]}
             </div>
@@ -105,7 +105,7 @@ export default function Profile() {
               <p className="font-mono text-xs text-gray-500">$29/month</p>
             </div>
             <Link
-              href="/pricing.html"
+              href="/pricing"
               className="border border-gray-300 font-mono text-sm px-6 py-3 hover:border-orange hover:text-orange transition-colors"
             >
               change plan
