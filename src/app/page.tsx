@@ -177,6 +177,57 @@ export default function Home() {
         </div>
       </section>
 
+      {/* faq */}
+      <section className="px-6 py-16 md:px-12 md:py-24 border-t border-gray-100">
+        <h2 className="font-display text-3xl md:text-5xl font-bold mb-12">
+          faq<span className="text-orange">.</span>
+        </h2>
+        <div className="max-w-3xl space-y-6">
+          <div className="border border-gray-200 p-6">
+            <h3 className="font-mono text-base font-bold mb-2">what is sprint?</h3>
+            <p className="font-mono text-sm text-gray-600">
+              sprint is a browser automation api that lets you control headless browsers programmatically. 
+              use it to build ai agents, scrape data, test applications, or automate workflows.
+            </p>
+          </div>
+          <div className="border border-gray-200 p-6">
+            <h3 className="font-mono text-base font-bold mb-2">how does the api work?</h3>
+            <p className="font-mono text-sm text-gray-600">
+              you send simple http requests to create browser sessions, navigate pages, click elements, 
+              extract data, and more. we handle all the infrastructure complexity.
+            </p>
+          </div>
+          <div className="border border-gray-200 p-6">
+            <h3 className="font-mono text-base font-bold mb-2">is there a free tier?</h3>
+            <p className="font-mono text-sm text-gray-600">
+              yes. the hobby plan is free forever with 1 concurrent browser and 1,000 requests per month. 
+              no credit card required.
+            </p>
+          </div>
+          <div className="border border-gray-200 p-6">
+            <h3 className="font-mono text-base font-bold mb-2">can i use sprint for production?</h3>
+            <p className="font-mono text-sm text-gray-600">
+              absolutely. the pro plan includes 99.9% uptime, priority support, and production-ready 
+              infrastructure. thousands of requests per second supported.
+            </p>
+          </div>
+          <div className="border border-gray-200 p-6">
+            <h3 className="font-mono text-base font-bold mb-2">what languages are supported?</h3>
+            <p className="font-mono text-sm text-gray-600">
+              any language with http support. we have official clients for javascript/typescript, python, 
+              and go. rest api works with everything else.
+            </p>
+          </div>
+          <div className="border border-gray-200 p-6">
+            <h3 className="font-mono text-base font-bold mb-2">how do i get started?</h3>
+            <p className="font-mono text-sm text-gray-600">
+              sign up for free, get your api key, and make your first request in under 5 minutes. 
+              check our documentation for quickstart guides and examples.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* cta */}
       <section className="px-6 py-16 md:px-12 md:py-24 border-t border-gray-100 bg-orange">
         <div className="max-w-2xl">
@@ -198,12 +249,51 @@ export default function Home() {
       </section>
 
       {/* footer */}
-      <footer className="px-6 py-8 md:px-12 md:py-12 border-t border-gray-100">
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
-          <p className="font-display text-xl font-bold">sprint.</p>
+      <footer className="px-6 py-12 md:px-12 md:py-16 border-t border-gray-100 bg-gray-50">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <div>
+            <p className="font-display text-xl font-bold mb-4">sprint.</p>
+            <p className="font-mono text-sm text-gray-600">
+              browser automation api.<br />
+              build, scale, sell.
+            </p>
+          </div>
+          <div>
+            <h4 className="font-mono text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">product</h4>
+            <ul className="space-y-2">
+              <li><Link href="/docs" className="font-mono text-sm text-gray-600 hover:text-orange">documentation</Link></li>
+              <li><Link href="/pricing" className="font-mono text-sm text-gray-600 hover:text-orange">pricing</Link></li>
+              <li><Link href="/dashboard" className="font-mono text-sm text-gray-600 hover:text-orange">dashboard</Link></li>
+              <li><Link href="/login" className="font-mono text-sm text-gray-600 hover:text-orange">sign in</Link></li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-mono text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">resources</h4>
+            <ul className="space-y-2">
+              <li><a href="#" className="font-mono text-sm text-gray-600 hover:text-orange">api status</a></li>
+              <li><a href="#" className="font-mono text-sm text-gray-600 hover:text-orange">changelog</a></li>
+              <li><a href="#" className="font-mono text-sm text-gray-600 hover:text-orange">examples</a></li>
+              <li><a href="#" className="font-mono text-sm text-gray-600 hover:text-orange">support</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-mono text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">legal</h4>
+            <ul className="space-y-2">
+              <li><a href="#" className="font-mono text-sm text-gray-600 hover:text-orange">privacy policy</a></li>
+              <li><a href="#" className="font-mono text-sm text-gray-600 hover:text-orange">terms of service</a></li>
+              <li><a href="#" className="font-mono text-sm text-gray-600 hover:text-orange">cookie policy</a></li>
+            </ul>
+          </div>
+        </div>
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pt-8 border-t border-gray-200">
           <p className="font-mono text-xs text-gray-500">
             © 2026 sprint. all rights reserved.
           </p>
+          <div className="flex gap-4">
+            <a href="#" className="font-mono text-xs text-gray-500 hover:text-orange">twitter</a>
+            <a href="#" className="font-mono text-xs text-gray-500 hover:text-orange">github</a>
+            <a href="#" className="font-mono text-xs text-gray-500 hover:text-orange">discord</a>
+          </div>
         </div>
       </footer>
     </main>
