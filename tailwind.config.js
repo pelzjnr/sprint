@@ -11,8 +11,8 @@ module.exports = {
         orange: '#ff4d00',
       },
       fontFamily: {
-        display: ['Georgia', 'Times New Roman', 'serif'],
-        mono: ['Menlo', 'Monaco', 'Consolas', 'monospace'],
+        display: ['Playfair Display', 'serif'],
+        mono: ['Space Grotesk', 'monospace'],
       },
     },
   },
