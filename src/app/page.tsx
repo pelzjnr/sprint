@@ -6,7 +6,12 @@ export default function Home() {
       {/* hero */}
       <section className="h-screen flex flex-col justify-center px-8 md:px-24 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#ff4d00] rounded-full blur-3xl -translate-y-1/2 translate-x-1/4 pointer-events-none opacity-10" />
-        <h1 className="font-display text-6xl md:text-9xl font-bold tracking-tight relative">
+        <nav className="absolute top-8 right-24 flex gap-8">
+          <Link href="/docs" className="font-mono text-sm text-gray-600 hover:text-orange">docs</Link>
+          <Link href="/pricing" className="font-mono text-sm text-gray-600 hover:text-orange">pricing</Link>
+          <Link href="/dashboard" className="font-mono text-sm text-orange font-bold">dashboard</Link>
+        </nav>
+        <h1 className="font-display text-6xl md:text-9xl font-bold tracking-tight relative mt-12">
           sprint<span className="text-orange">.</span>
         </h1>
         <p className="font-mono text-lg md:text-xl mt-6 max-w-xl text-gray-600 relative">
