@@ -13,6 +13,7 @@ export default function Home() {
             <Link href="/docs" className="font-mono text-sm text-gray-600 hover:text-orange">docs</Link>
             <Link href="/pricing" className="font-mono text-sm text-gray-600 hover:text-orange">pricing</Link>
             <Link href="/dashboard" className="font-mono text-sm text-gray-600 hover:text-orange">dashboard</Link>
+            <Link href="/profile" className="font-mono text-sm text-gray-600 hover:text-orange">profile</Link>
             <Link href="/login" className="font-mono text-sm text-gray-600 hover:text-orange">log in</Link>
             <Link href="/signup" className="bg-orange text-white font-mono text-sm px-5 py-2 hover:bg-[#cc3d00] transition-colors">
               sign up
