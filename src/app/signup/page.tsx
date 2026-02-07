@@ -99,11 +99,11 @@ export default function Signup() {
             <input type="checkbox" className="accent-orange mt-1" />
             <span className="font-mono text-xs text-gray-500">
               i agree to the{" "}
-              <Link href="/terms" className="text-orange hover:text-[#cc3d00]">
+              <Link href="/terms.html" className="text-orange hover:text-[#cc3d00]">
                 terms of service
               </Link>{" "}
               and{" "}
-              <Link href="/privacy" className="text-orange hover:text-[#cc3d00]">
+              <Link href="/privacy.html" className="text-orange hover:text-[#cc3d00]">
                 privacy policy
               </Link>
             </span>
@@ -119,7 +119,7 @@ export default function Signup() {
 
         <p className="font-mono text-sm text-gray-500 mt-8 text-center">
           already have an account?{" "}
-          <Link href="/login" className="text-orange hover:text-[#cc3d00]">
+          <Link href="/login.html" className="text-orange hover:text-[#cc3d00]">
             sign in
           </Link>
         </p>

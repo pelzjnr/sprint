@@ -26,9 +26,9 @@ export default function Dashboard() {
             sprint<span className="text-orange">.</span>
           </Link>
           <nav className="flex items-center gap-6">
-            <Link href="/docs" className="font-mono text-sm text-gray-600 hover:text-orange hidden sm:block">docs</Link>
-            <Link href="/pricing" className="font-mono text-sm text-gray-600 hover:text-orange hidden sm:block">pricing</Link>
-            <Link href="/profile" className="font-mono text-sm text-orange font-bold hidden sm:block">profile</Link>
+            <Link href="/docs.html" className="font-mono text-sm text-gray-600 hover:text-orange hidden sm:block">docs</Link>
+            <Link href="/pricing.html" className="font-mono text-sm text-gray-600 hover:text-orange hidden sm:block">pricing</Link>
+            <Link href="/profile.html" className="font-mono text-sm text-orange font-bold hidden sm:block">profile</Link>
             <div className="w-8 h-8 bg-orange rounded-full flex items-center justify-center text-white font-mono text-sm font-bold">
               P
             </div>

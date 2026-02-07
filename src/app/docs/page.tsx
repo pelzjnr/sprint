@@ -10,15 +10,15 @@ export default function Docs() {
             sprint<span className="text-orange">.</span>
           </Link>
           <nav className="hidden md:flex items-center gap-8">
-            <Link href="/docs" className="font-mono text-sm text-orange font-bold">docs</Link>
-            <Link href="/pricing" className="font-mono text-sm text-gray-600 hover:text-orange">pricing</Link>
-            <Link href="/dashboard" className="font-mono text-sm text-gray-600 hover:text-orange">dashboard</Link>
-            <Link href="/login" className="font-mono text-sm text-gray-600 hover:text-orange">log in</Link>
-            <Link href="/signup" className="bg-orange text-white font-mono text-sm px-5 py-2 hover:bg-[#cc3d00] transition-colors">
+            <Link href="/docs.html" className="font-mono text-sm text-orange font-bold">docs</Link>
+            <Link href="/pricing.html" className="font-mono text-sm text-gray-600 hover:text-orange">pricing</Link>
+            <Link href="/dashboard.html" className="font-mono text-sm text-gray-600 hover:text-orange">dashboard</Link>
+            <Link href="/login.html" className="font-mono text-sm text-gray-600 hover:text-orange">log in</Link>
+            <Link href="/signup.html" className="bg-orange text-white font-mono text-sm px-5 py-2 hover:bg-[#cc3d00] transition-colors">
               sign up
             </Link>
           </nav>
-          <Link href="/signup" className="md:hidden bg-orange text-white font-mono text-sm px-4 py-2 hover:bg-[#cc3d00] transition-colors">
+          <Link href="/signup.html" className="md:hidden bg-orange text-white font-mono text-sm px-4 py-2 hover:bg-[#cc3d00] transition-colors">
             sign up
           </Link>
         </div>
