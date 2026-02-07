@@ -1,6 +1,28 @@
+"use client";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 export default function Signup() {
+  const router = useRouter();
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // mock auth - accept any credentials for demo
+    router.push("/dashboard");
+  };
+
   return (
     <main className="min-h-screen flex items-center justify-center px-6 py-12">
       <div className="w-full max-w-md">
@@ -11,12 +33,15 @@ export default function Signup() {
         <h1 className="font-display text-3xl md:text-4xl font-bold mb-2">create account</h1>
         <p className="font-mono text-sm text-gray-500 mb-8">start building with sprint</p>
 
-        <form className="space-y-5">
+        <form onSubmit={handleSubmit} className="space-y-5">
           <div className="grid grid-cols-2 gap-4">
             <div>
               <label className="font-mono text-sm font-bold mb-2 block">first name</label>
               <input
                 type="text"
+                name="firstName"
+                value={formData.firstName}
+                onChange={handleChange}
                 placeholder="john"
                 className="w-full border border-gray-200 p-4 font-mono text-sm focus:border-orange focus:outline-none transition-colors"
               />
@@ -25,6 +50,9 @@ export default function Signup() {
               <label className="font-mono text-sm font-bold mb-2 block">last name</label>
               <input
                 type="text"
+                name="lastName"
+                value={formData.lastName}
+                onChange={handleChange}
                 placeholder="doe"
                 className="w-full border border-gray-200 p-4 font-mono text-sm focus:border-orange focus:outline-none transition-colors"
               />
@@ -35,6 +63,9 @@ export default function Signup() {
             <label className="font-mono text-sm font-bold mb-2 block">email</label>
             <input
               type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
               placeholder="you@example.com"
               className="w-full border border-gray-200 p-4 font-mono text-sm focus:border-orange focus:outline-none transition-colors"
             />
@@ -44,6 +75,9 @@ export default function Signup() {
             <label className="font-mono text-sm font-bold mb-2 block">password</label>
             <input
               type="password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
               placeholder="••••••••"
               className="w-full border border-gray-200 p-4 font-mono text-sm focus:border-orange focus:outline-none transition-colors"
             />
@@ -53,6 +87,9 @@ export default function Signup() {
             <label className="font-mono text-sm font-bold mb-2 block">confirm password</label>
             <input
               type="password"
+              name="confirmPassword"
+              value={formData.confirmPassword}
+              onChange={handleChange}
               placeholder="••••••••"
               className="w-full border border-gray-200 p-4 font-mono text-sm focus:border-orange focus:outline-none transition-colors"
             />

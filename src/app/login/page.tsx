@@ -1,6 +1,19 @@
+"use client";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 export default function Login() {
+  const router = useRouter();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // mock auth - accept any credentials for demo
+    router.push("/dashboard");
+  };
+
   return (
     <main className="min-h-screen flex items-center justify-center px-6 py-12">
       <div className="w-full max-w-md">
@@ -11,11 +24,13 @@ export default function Login() {
         <h1 className="font-display text-3xl md:text-4xl font-bold mb-2">welcome back</h1>
         <p className="font-mono text-sm text-gray-500 mb-8">sign in to your account</p>
 
-        <form className="space-y-5">
+        <form onSubmit={handleSubmit} className="space-y-5">
           <div>
             <label className="font-mono text-sm font-bold mb-2 block">email</label>
             <input
               type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               placeholder="you@example.com"
               className="w-full border border-gray-200 p-4 font-mono text-sm focus:border-orange focus:outline-none transition-colors"
             />
@@ -25,6 +40,8 @@ export default function Login() {
             <label className="font-mono text-sm font-bold mb-2 block">password</label>
             <input
               type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               placeholder="••••••••"
               className="w-full border border-gray-200 p-4 font-mono text-sm focus:border-orange focus:outline-none transition-colors"
             />
