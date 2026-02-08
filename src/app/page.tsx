@@ -99,27 +99,27 @@ export default function Home() {
             <div className="w-10 h-10 bg-orange text-white flex items-center justify-center font-mono text-lg font-bold mb-4">
               1
             </div>
-            <h3 className="font-mono text-lg font-bold mb-3">api-first</h3>
+            <h3 className="font-mono text-lg font-bold mb-3">ai-ready</h3>
             <p className="font-mono text-sm text-gray-600">
-              restful api. simple endpoints. full control.
+              mcp and langchain support built-in. your agents can browse the web.
             </p>
           </div>
           <div className="border border-gray-200 p-6 md:p-8 hover:border-orange transition-colors">
             <div className="w-10 h-10 bg-orange text-white flex items-center justify-center font-mono text-lg font-bold mb-4">
               2
             </div>
-            <h3 className="font-mono text-lg font-bold mb-3">scalable</h3>
+            <h3 className="font-mono text-lg font-bold mb-3">anti-detection</h3>
             <p className="font-mono text-sm text-gray-600">
-              from one browser to thousands. we handle the infrastructure.
+              residential proxies and captcha solving included. no add-ons.
             </p>
           </div>
           <div className="border border-gray-200 p-6 md:p-8 hover:border-orange transition-colors">
             <div className="w-10 h-10 bg-orange text-white flex items-center justify-center font-mono text-lg font-bold mb-4">
               3
             </div>
-            <h3 className="font-mono text-lg font-bold mb-3">reliable</h3>
+            <h3 className="font-mono text-lg font-bold mb-3">transparent pricing</h3>
             <p className="font-mono text-sm text-gray-600">
-              99.9% uptime. robust error handling. production ready.
+              flat rates. no credit systems. predictable costs.
             </p>
           </div>
         </div>
@@ -134,25 +134,25 @@ export default function Home() {
           <div className="border-l-4 border-orange pl-6 py-3">
             <h3 className="font-mono text-lg font-bold text-orange">ai agents</h3>
             <p className="font-mono text-sm text-gray-600 mt-2">
-              give your agents the ability to navigate the web.
+              give your agents the ability to browse, scrape, and interact with any website.
             </p>
           </div>
           <div className="border-l-4 border-gray-200 pl-6 py-3">
-            <h3 className="font-mono text-lg font-bold">data scraping</h3>
+            <h3 className="font-mono text-lg font-bold">data extraction</h3>
             <p className="font-mono text-sm text-gray-600 mt-2">
-              extract data at scale without getting blocked.
-            </p>
-          </div>
-          <div className="border-l-4 border-gray-200 pl-6 py-3">
-            <h3 className="font-mono text-lg font-bold">testing</h3>
-            <p className="font-mono text-sm text-gray-600 mt-2">
-              automated browser testing for your applications.
+              scrape twitter, linkedin, reddit and more. residential proxies included.
             </p>
           </div>
           <div className="border-l-4 border-gray-200 pl-6 py-3">
             <h3 className="font-mono text-lg font-bold">automation</h3>
             <p className="font-mono text-sm text-gray-600 mt-2">
-              automate repetitive web workflows at scale.
+              automate repetitive web workflows. captcha handling built-in.
+            </p>
+          </div>
+          <div className="border-l-4 border-gray-200 pl-6 py-3">
+            <h3 className="font-mono text-lg font-bold">testing</h3>
+            <p className="font-mono text-sm text-gray-600 mt-2">
+              automated browser testing for your applications at scale.
             </p>
           </div>
         </div>
@@ -170,7 +170,8 @@ export default function Home() {
             <p className="font-mono text-sm text-gray-500 mt-2">free forever</p>
             <ul className="font-mono text-sm mt-6 space-y-2 text-gray-600">
               <li>1 concurrent browser</li>
-              <li>1000 requests / month</li>
+              <li>10,000 requests / month</li>
+              <li>residential proxies</li>
               <li>community support</li>
             </ul>
           </div>
@@ -179,27 +180,30 @@ export default function Home() {
               popular
             </div>
             <h3 className="font-mono text-base font-bold text-orange">pro</h3>
-            <p className="font-display text-4xl font-bold mt-4">$29</p>
+            <p className="font-display text-4xl font-bold mt-4">$49</p>
             <p className="font-mono text-sm text-gray-500 mt-2">/ month</p>
             <ul className="font-mono text-sm mt-6 space-y-2 text-gray-600">
               <li>10 concurrent browsers</li>
-              <li>100,000 requests / month</li>
+              <li>500,000 requests / month</li>
+              <li>mcp + langchain support</li>
               <li>priority support</li>
-              <li>advanced features</li>
             </ul>
           </div>
           <div className="border border-gray-200 p-6 md:p-8 hover:border-orange transition-colors">
-            <h3 className="font-mono text-base font-bold text-gray-500">enterprise</h3>
-            <p className="font-display text-4xl font-bold mt-4">custom</p>
-            <p className="font-mono text-sm text-gray-500 mt-2">contact us</p>
+            <h3 className="font-mono text-base font-bold text-gray-500">team</h3>
+            <p className="font-display text-4xl font-bold mt-4">$199</p>
+            <p className="font-mono text-sm text-gray-500 mt-2">/ month</p>
             <ul className="font-mono text-sm mt-6 space-y-2 text-gray-600">
-              <li>unlimited browsers</li>
+              <li>50 concurrent browsers</li>
               <li>unlimited requests</li>
               <li>dedicated support</li>
               <li>custom integrations</li>
             </ul>
           </div>
         </div>
+        <p className="font-mono text-sm text-gray-500 mt-8 text-center">
+          transparent pricing. no credit system. predictable costs.
+        </p>
       </section>
 
       {/* faq */}
@@ -222,7 +226,11 @@ export default function Home() {
           />
           <FAQItem
             question="can i use sprint for production?"
-            answer="absolutely. the pro plan includes 99.9% uptime, priority support, and production-ready infrastructure. thousands of requests per second supported."
+            answer="absolutely. the pro plan includes production-ready infrastructure with 99.9% uptime, mcp and langchain support for ai agents, and residential proxies to avoid blocking."
+          />
+          <FAQItem
+            question="how is sprint different from apify or browserbase?"
+            answer="we focus on ai-first workflows with mcp support, include residential proxies and captcha solving in the price, and use transparent flat-rate pricing instead of complex credit systems."
           />
           <FAQItem
             question="what languages are supported?"
