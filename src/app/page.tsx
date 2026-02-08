@@ -1,4 +1,29 @@
+"use client";
 import Link from "next/link";
+import { useState } from "react";
+
+function FAQItem({ question, answer }: { question: string; answer: string }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className="border border-gray-200">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full p-6 text-left hover:bg-gray-50 transition-colors flex items-center justify-between"
+      >
+        <span className="font-mono text-base font-bold">{question}</span>
+        <span className={`font-mono text-xl transition-transform ${isOpen ? "rotate-45" : ""}`}>
+          +
+        </span>
+      </button>
+      {isOpen && (
+        <div className="px-6 pb-6">
+          <p className="font-mono text-sm text-gray-600">{answer}</p>
+        </div>
+      )}
+    </div>
+  );
+}
 
 export default function Home() {
   return (
@@ -182,49 +207,31 @@ export default function Home() {
         <h2 className="font-display text-3xl md:text-5xl font-bold mb-12">
           faq<span className="text-orange">.</span>
         </h2>
-        <div className="max-w-3xl space-y-6">
-          <div className="border border-gray-200 p-6">
-            <h3 className="font-mono text-base font-bold mb-2">what is sprint?</h3>
-            <p className="font-mono text-sm text-gray-600">
-              sprint is a browser automation api that lets you control headless browsers programmatically. 
-              use it to build ai agents, scrape data, test applications, or automate workflows.
-            </p>
-          </div>
-          <div className="border border-gray-200 p-6">
-            <h3 className="font-mono text-base font-bold mb-2">how does the api work?</h3>
-            <p className="font-mono text-sm text-gray-600">
-              you send simple http requests to create browser sessions, navigate pages, click elements, 
-              extract data, and more. we handle all the infrastructure complexity.
-            </p>
-          </div>
-          <div className="border border-gray-200 p-6">
-            <h3 className="font-mono text-base font-bold mb-2">is there a free tier?</h3>
-            <p className="font-mono text-sm text-gray-600">
-              yes. the hobby plan is free forever with 1 concurrent browser and 1,000 requests per month. 
-              no credit card required.
-            </p>
-          </div>
-          <div className="border border-gray-200 p-6">
-            <h3 className="font-mono text-base font-bold mb-2">can i use sprint for production?</h3>
-            <p className="font-mono text-sm text-gray-600">
-              absolutely. the pro plan includes 99.9% uptime, priority support, and production-ready 
-              infrastructure. thousands of requests per second supported.
-            </p>
-          </div>
-          <div className="border border-gray-200 p-6">
-            <h3 className="font-mono text-base font-bold mb-2">what languages are supported?</h3>
-            <p className="font-mono text-sm text-gray-600">
-              any language with http support. we have official clients for javascript/typescript, python, 
-              and go. rest api works with everything else.
-            </p>
-          </div>
-          <div className="border border-gray-200 p-6">
-            <h3 className="font-mono text-base font-bold mb-2">how do i get started?</h3>
-            <p className="font-mono text-sm text-gray-600">
-              sign up for free, get your api key, and make your first request in under 5 minutes. 
-              check our documentation for quickstart guides and examples.
-            </p>
-          </div>
+        <div className="max-w-3xl space-y-4">
+          <FAQItem
+            question="what is sprint?"
+            answer="sprint is a browser automation api that lets you control headless browsers programmatically. use it to build ai agents, scrape data, test applications, or automate workflows."
+          />
+          <FAQItem
+            question="how does the api work?"
+            answer="you send simple http requests to create browser sessions, navigate pages, click elements, extract data, and more. we handle all the infrastructure complexity."
+          />
+          <FAQItem
+            question="is there a free tier?"
+            answer="yes. the hobby plan is free forever with 1 concurrent browser and 1,000 requests per month. no credit card required."
+          />
+          <FAQItem
+            question="can i use sprint for production?"
+            answer="absolutely. the pro plan includes 99.9% uptime, priority support, and production-ready infrastructure. thousands of requests per second supported."
+          />
+          <FAQItem
+            question="what languages are supported?"
+            answer="any language with http support. we have official clients for javascript/typescript, python, and go. rest api works with everything else."
+          />
+          <FAQItem
+            question="how do i get started?"
+            answer="sign up for free, get your api key, and make your first request in under 5 minutes. check our documentation for quickstart guides and examples."
+          />
         </div>
       </section>
 
