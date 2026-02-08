@@ -25,6 +25,55 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
   );
 }
 
+function CommandPalette() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  useState(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+        e.preventDefault();
+        setIsOpen(true);
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  });
+
+  return (
+    <>
+      <div className="hidden md:flex items-center gap-2 px-3 py-1.5 border border-gray-200 rounded text-gray-400 cursor-pointer hover:border-orange hover:text-orange transition-colors">
+        <span className="font-mono text-xs">⌘K</span>
+      </div>
+      {isOpen && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50" onClick={() => setIsOpen(false)}>
+          <div className="bg-white w-full max-w-lg mx-4 rounded-lg p-4" onClick={e => e.stopPropagation()}>
+            <input
+              type="text"
+              placeholder="Search..."
+              className="w-full border border-gray-200 p-3 font-mono text-sm focus:border-orange focus:outline-none"
+              autoFocus
+            />
+            <div className="mt-4 space-y-2">
+              <div className="p-2 hover:bg-gray-50 cursor-pointer rounded">
+                <p className="font-mono text-sm font-bold">Documentation</p>
+                <p className="font-mono text-xs text-gray-500">Browse API docs</p>
+              </div>
+              <div className="p-2 hover:bg-gray-50 cursor-pointer rounded">
+                <p className="font-mono text-sm font-bold">Dashboard</p>
+                <p className="font-mono text-xs text-gray-500">View your usage stats</p>
+              </div>
+              <div className="p-2 hover:bg-gray-50 cursor-pointer rounded">
+                <p className="font-mono text-sm font-bold">Pricing</p>
+                <p className="font-mono text-xs text-gray-500">Compare plans</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+  );
+}
+
 export default function Home() {
   return (
     <main className="min-h-screen">
@@ -39,6 +88,7 @@ export default function Home() {
             <Link href="/pricing" className="font-mono text-sm text-gray-600 hover:text-orange">pricing</Link>
             <Link href="/dashboard" className="font-mono text-sm text-gray-600 hover:text-orange">dashboard</Link>
             <Link href="/profile" className="font-mono text-sm text-gray-600 hover:text-orange">profile</Link>
+            <CommandPalette />
             <Link href="/login" className="font-mono text-sm text-gray-600 hover:text-orange">log in</Link>
             <Link href="/signup" className="bg-orange text-white font-mono text-sm px-5 py-2 hover:bg-[#cc3d00] transition-colors">
               sign up
@@ -265,50 +315,34 @@ export default function Home() {
 
       {/* footer */}
       <footer className="px-6 py-12 md:px-12 md:py-16 border-t border-gray-100 bg-gray-50">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           <div>
             <p className="font-display text-xl font-bold mb-4">sprint.</p>
             <p className="font-mono text-sm text-gray-600">
               browser automation api.<br />
-              build, scale, sell.
+              ai-first and developer-friendly.
             </p>
           </div>
           <div>
             <h4 className="font-mono text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">product</h4>
             <ul className="space-y-2">
-              <li><Link href="/docs" className="font-mono text-sm text-gray-600 hover:text-orange">documentation</Link></li>
+              <li><Link href="/docs" className="font-mono text-sm text-gray-600 hover:text-orange">docs</Link></li>
               <li><Link href="/pricing" className="font-mono text-sm text-gray-600 hover:text-orange">pricing</Link></li>
               <li><Link href="/dashboard" className="font-mono text-sm text-gray-600 hover:text-orange">dashboard</Link></li>
-              <li><Link href="/login" className="font-mono text-sm text-gray-600 hover:text-orange">sign in</Link></li>
             </ul>
           </div>
           <div>
             <h4 className="font-mono text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">resources</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="font-mono text-sm text-gray-600 hover:text-orange">api status</a></li>
-              <li><a href="#" className="font-mono text-sm text-gray-600 hover:text-orange">changelog</a></li>
-              <li><a href="#" className="font-mono text-sm text-gray-600 hover:text-orange">examples</a></li>
-              <li><a href="#" className="font-mono text-sm text-gray-600 hover:text-orange">support</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-mono text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">legal</h4>
-            <ul className="space-y-2">
-              <li><a href="#" className="font-mono text-sm text-gray-600 hover:text-orange">privacy policy</a></li>
-              <li><a href="#" className="font-mono text-sm text-gray-600 hover:text-orange">terms of service</a></li>
-              <li><a href="#" className="font-mono text-sm text-gray-600 hover:text-orange">cookie policy</a></li>
+              <li><a href="#" className="font-mono text-sm text-gray-600 hover:text-orange">status</a></li>
+              <li><Link href="/login" className="font-mono text-sm text-gray-600 hover:text-orange">sign in</Link></li>
             </ul>
           </div>
         </div>
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pt-8 border-t border-gray-200">
           <p className="font-mono text-xs text-gray-500">
-            © 2026 sprint. all rights reserved.
+            © 2026 sprint.
           </p>
-          <div className="flex gap-4">
-            <a href="#" className="font-mono text-xs text-gray-500 hover:text-orange">twitter</a>
-            <a href="#" className="font-mono text-xs text-gray-500 hover:text-orange">github</a>
-            <a href="#" className="font-mono text-xs text-gray-500 hover:text-orange">discord</a>
-          </div>
         </div>
       </footer>
     </main>

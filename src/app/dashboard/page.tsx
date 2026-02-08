@@ -2,11 +2,22 @@
 import Link from "next/link";
 import { useState } from "react";
 
+function Skeleton({ className }: { className?: string }) {
+  return (
+    <div className={`animate-pulse bg-gray-200 rounded ${className}`} />
+  );
+}
+
 export default function Dashboard() {
   const [apiKey, setApiKey] = useState("sprint_api_key_xxxx");
   const [showKey, setShowKey] = useState(false);
-
+  const [loading, setLoading] = useState(true);
   const [copied, setCopied] = useState(false);
+
+  useState(() => {
+    const timer = setTimeout(() => setLoading(false), 800);
+    return () => clearTimeout(timer);
+  });
 
   const copyKey = () => {
     navigator.clipboard.writeText(apiKey);
@@ -82,85 +93,97 @@ export default function Dashboard() {
 
         {/* stats */}
         <section className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-          <div className="bg-white border border-gray-200 p-6">
-            <p className="font-mono text-xs text-gray-500 mb-2">requests this month</p>
-            <p className="font-display text-2xl md:text-3xl font-bold">12,847</p>
-            <p className="font-mono text-xs text-green-600 mt-2">+12% from last month</p>
-          </div>
-          <div className="bg-white border border-gray-200 p-6">
-            <p className="font-mono text-xs text-gray-500 mb-2">concurrent browsers</p>
-            <p className="font-display text-2xl md:text-3xl font-bold">3</p>
-            <p className="font-mono text-xs text-gray-400 mt-2">of 10 allowed</p>
-          </div>
-          <div className="bg-white border border-gray-200 p-6">
-            <p className="font-mono text-xs text-gray-500 mb-2">success rate</p>
-            <p className="font-display text-2xl md:text-3xl font-bold">99.7%</p>
-            <p className="font-mono text-xs text-green-600 mt-2">last 7 days</p>
-          </div>
-          <div className="bg-white border border-gray-200 p-6">
-            <p className="font-mono text-xs text-gray-500 mb-2">avg response</p>
-            <p className="font-display text-2xl md:text-3xl font-bold">142ms</p>
-            <p className="font-mono text-xs text-gray-400 mt-2">p95 latency</p>
-          </div>
+          {loading ? (
+            <>
+              <StatCardSkeleton />
+              <StatCardSkeleton />
+              <StatCardSkeleton />
+              <StatCardSkeleton />
+            </>
+          ) : (
+            <>
+              <div className="bg-white border border-gray-200 p-6">
+                <p className="font-mono text-xs text-gray-500 mb-2">requests this month</p>
+                <p className="font-display text-2xl md:text-3xl font-bold">12,847</p>
+                <p className="font-mono text-xs text-green-600 mt-2">+12% from last month</p>
+              </div>
+              <div className="bg-white border border-gray-200 p-6">
+                <p className="font-mono text-xs text-gray-500 mb-2">concurrent browsers</p>
+                <p className="font-display text-2xl md:text-3xl font-bold">3</p>
+                <p className="font-mono text-xs text-gray-400 mt-2">of 10 allowed</p>
+              </div>
+              <div className="bg-white border border-gray-200 p-6">
+                <p className="font-mono text-xs text-gray-500 mb-2">success rate</p>
+                <p className="font-display text-2xl md:text-3xl font-bold">99.7%</p>
+                <p className="font-mono text-xs text-green-600 mt-2">last 7 days</p>
+              </div>
+              <div className="bg-white border border-gray-200 p-6">
+                <p className="font-mono text-xs text-gray-500 mb-2">avg response</p>
+                <p className="font-display text-2xl md:text-3xl font-bold">142ms</p>
+                <p className="font-mono text-xs text-gray-400 mt-2">p95 latency</p>
+              </div>
+            </>
+          )}
         </section>
 
         {/* recent activity */}
         <section className="bg-white border border-gray-200 p-6 md:p-8">
           <h2 className="font-mono text-lg font-bold mb-6">recent activity</h2>
           <div className="space-y-3">
-            <div className="flex items-center justify-between py-3 border-b border-gray-100">
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-green-500 rounded-full" />
-                <div>
-                  <p className="font-mono text-sm">GET /v1/browser/session</p>
-                  <p className="font-mono text-xs text-gray-500">200 OK · 142ms</p>
-                </div>
-              </div>
-              <p className="font-mono text-xs text-gray-400">2 min ago</p>
-            </div>
-            <div className="flex items-center justify-between py-3 border-b border-gray-100">
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-green-500 rounded-full" />
-                <div>
-                  <p className="font-mono text-sm">POST /v1/browser/navigate</p>
-                  <p className="font-mono text-xs text-gray-500">200 OK · 89ms</p>
-                </div>
-              </div>
-              <p className="font-mono text-xs text-gray-400">5 min ago</p>
-            </div>
-            <div className="flex items-center justify-between py-3 border-b border-gray-100">
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-green-500 rounded-full" />
-                <div>
-                  <p className="font-mono text-sm">GET /v1/browser/screenshot</p>
-                  <p className="font-mono text-xs text-gray-500">200 OK · 234ms</p>
-                </div>
-              </div>
-              <p className="font-mono text-xs text-gray-400">8 min ago</p>
-            </div>
-            <div className="flex items-center justify-between py-3 border-b border-gray-100">
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-orange-500 rounded-full" />
-                <div>
-                  <p className="font-mono text-sm">POST /v1/browser/click</p>
-                  <p className="font-mono text-xs text-gray-500">200 OK · 156ms</p>
-                </div>
-              </div>
-              <p className="font-mono text-xs text-gray-400">12 min ago</p>
-            </div>
-            <div className="flex items-center justify-between py-3">
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-green-500 rounded-full" />
-                <div>
-                  <p className="font-mono text-sm">GET /v1/browser/cookies</p>
-                  <p className="font-mono text-xs text-gray-500">200 OK · 67ms</p>
-                </div>
-              </div>
-              <p className="font-mono text-xs text-gray-400">18 min ago</p>
-            </div>
+            <ActivityRow status="success" method="GET" path="/v1/browser/session" statusCode="200 OK" latency="142ms" time="2 min ago" />
+            <ActivityRow status="success" method="POST" path="/v1/browser/navigate" statusCode="200 OK" latency="89ms" time="5 min ago" />
+            <ActivityRow status="success" method="GET" path="/v1/browser/screenshot" statusCode="200 OK" latency="234ms" time="8 min ago" />
+            <ActivityRow status="warning" method="POST" path="/v1/browser/click" statusCode="200 OK" latency="156ms" time="12 min ago" />
+            <ActivityRow status="success" method="GET" path="/v1/browser/cookies" statusCode="200 OK" latency="67ms" time="18 min ago" />
           </div>
         </section>
       </div>
     </main>
+  );
+}
+
+function StatCardSkeleton() {
+  return (
+    <div className="bg-white border border-gray-200 p-6">
+      <Skeleton className="h-3 w-24 mb-2" />
+      <Skeleton className="h-8 w-16 mb-2" />
+      <Skeleton className="h-3 w-32" />
+    </div>
+  );
+}
+
+function ActivityRow({ status, method, path, statusCode, latency, time }: { status: string; method: string; path: string; statusCode: string; latency: string; time: string }) {
+  const statusColors: Record<string, string> = {
+    success: "bg-green-500",
+    warning: "bg-orange-500",
+    error: "bg-red-500",
+  };
+
+  return (
+    <div className="flex items-center justify-between py-3 border-b border-gray-100">
+      <div className="flex items-center gap-3">
+        <div className={`w-2 h-2 ${statusColors[status]} rounded-full`} />
+        <div>
+          <p className="font-mono text-sm">{method} {path}</p>
+          <p className="font-mono text-xs text-gray-500">{statusCode} · {latency}</p>
+        </div>
+      </div>
+      <p className="font-mono text-xs text-gray-400">{time}</p>
+    </div>
+  );
+}
+
+function ActivityItemSkeleton() {
+  return (
+    <div className="flex items-center justify-between py-3 border-b border-gray-100">
+      <div className="flex items-center gap-3">
+        <Skeleton className="w-2 h-2 rounded-full" />
+        <div>
+          <Skeleton className="h-4 w-40 mb-1" />
+          <Skeleton className="h-3 w-24" />
+        </div>
+      </div>
+      <Skeleton className="h-3 w-16" />
+    </div>
   );
 }
