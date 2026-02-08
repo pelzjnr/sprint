@@ -43,9 +43,9 @@ export default function Dashboard() {
             <Link href="/docs" className="font-mono text-sm text-gray-600 hover:text-orange hidden sm:block">docs</Link>
             <Link href="/pricing" className="font-mono text-sm text-gray-600 hover:text-orange hidden sm:block">pricing</Link>
             <Link href="/profile" className="font-mono text-sm text-orange font-bold hidden sm:block">profile</Link>
-            <div className="w-8 h-8 bg-orange rounded-full flex items-center justify-center text-white font-mono text-sm font-bold">
+            <Link href="/profile" className="w-8 h-8 bg-orange rounded-full flex items-center justify-center text-white font-mono text-sm font-bold hover:opacity-80 transition-opacity">
               P
-            </div>
+            </Link>
           </nav>
         </div>
       </header>

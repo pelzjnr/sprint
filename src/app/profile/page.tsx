@@ -23,9 +23,9 @@ export default function Profile() {
             <Link href="/docs" className="font-mono text-sm text-gray-600 hover:text-orange hidden sm:block">docs</Link>
             <Link href="/pricing" className="font-mono text-sm text-gray-600 hover:text-orange hidden sm:block">pricing</Link>
             <Link href="/dashboard" className="font-mono text-sm text-orange font-bold hidden sm:block">dashboard</Link>
-            <div className="w-8 h-8 bg-orange rounded-full flex items-center justify-center text-white font-mono text-sm font-bold">
+            <Link href="/profile" className="w-8 h-8 bg-orange rounded-full flex items-center justify-center text-white font-mono text-sm font-bold hover:opacity-80 transition-opacity">
               {user.firstName[0]}{user.lastName[0]}
-            </div>
+            </Link>
           </nav>
         </div>
       </header>
